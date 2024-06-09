@@ -11,7 +11,7 @@ pipeline {
 
         stage('node version') {
           steps {
-            powershell(script: 'node-v', label: 'Node Version', returnStatus: true, returnStdout: true)
+            powershell(script: 'node -v', label: 'Node Version', returnStatus: true, returnStdout: true)
           }
         }
 
