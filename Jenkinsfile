@@ -6,6 +6,7 @@ pipeline {
         stage('Build') {
           steps {
             powershell 'mvn --version'
+            powershell(script: 'mvn --version', label: 'Maven Version', returnStatus: true, returnStdout: true)
           }
         }
 
