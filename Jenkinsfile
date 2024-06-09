@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Builds') {
       parallel {
-        stage('Build') {
+        stage('Maven Version') {
           steps {
             powershell 'mvn --version'
           }
@@ -15,6 +15,12 @@ pipeline {
           }
         }
 
+      }
+    }
+
+    stage('Build') {
+      steps {
+        powershell 'clean compile test package'
       }
     }
 
