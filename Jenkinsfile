@@ -5,13 +5,13 @@ pipeline {
       parallel {
         stage('Build') {
           steps {
-            bat(script: 'mvn --version', label: 'MAVEN Version', returnStatus: true, returnStdout: true)
+            powershell 'mvn --version'
           }
         }
 
         stage('node version') {
           steps {
-            powershell(script: 'node -v', label: 'node version', returnStatus: true, returnStdout: true)
+            powershell(script: 'node -v', returnStdout: true, returnStatus: true, label: 'node')
           }
         }
 
