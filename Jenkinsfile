@@ -20,7 +20,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        powershell 'clean compile test package'
+        powershell 'mvn clean compile test package'
       }
     }
 
