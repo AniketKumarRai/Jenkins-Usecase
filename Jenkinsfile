@@ -5,7 +5,7 @@ pipeline {
       parallel {
         stage('Build') {
           steps {
-            powershell(script: 'mvn --version', label: 'Maven Version', returnStatus: true, returnStdout: true)
+            pwsh(script: 'mvn --version', label: 'MavenVersion', returnStatus: true, returnStdout: true)
           }
         }
 
